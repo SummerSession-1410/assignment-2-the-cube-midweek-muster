@@ -73,7 +73,7 @@ public class Cube {
                     face[i][j] = tempFace[j][i];
                 }
             }
-            /*  Now the middle row, face[1], is now correct, but the top and
+            /*  The middle row, face[1], is now correct, but the top and
                 bottom rows need to switch */
 
             // Intent here will be to swap rows
@@ -104,6 +104,18 @@ public class Cube {
 
     }
 
+    static void showCube(String[][][] pCube){
+        for(int i=0; i<6; i++){
+            for(int j=0; j<3; j++){
+                for(int k=0; k<3; k++){
+                    System.out.print(pCube[i][j][k]);
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args){
 
         String[][] tempFace = new String[3][3];
@@ -119,5 +131,8 @@ public class Cube {
         rotateFace(tempFace, true);
 
         showFace(tempFace);
+
+        System.out.println("The whole cube:\n");
+        showCube(cube);
     }
 }
